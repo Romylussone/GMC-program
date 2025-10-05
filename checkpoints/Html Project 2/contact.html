@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us | Delicious Bites</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #fff8f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 500px;
+            margin: 40px auto;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            padding: 30px;
+        }
+        h1 {
+            text-align: center;
+            color: #d2691e;
+            margin-bottom: 10px;
+        }
+        p {
+            text-align: center;
+            color: #555;
+            margin-bottom: 25px;
+        }
+        form label {
+            display: block;
+            margin-bottom: 6px;
+            color: #333;
+            font-weight: 500;
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 18px;
+            border: 1px solid #e0c9a6;
+            border-radius: 5px;
+            font-size: 1em;
+            background: #fffaf3;
+        }
+        form textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        button {
+            background: #d2691e;
+            color: #fff;
+            border: none;
+            padding: 12px 0;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background: #a0522d;
+        }
+        .info {
+            margin-top: 30px;
+            text-align: center;
+            color: #7a5c3a;
+            font-size: 0.97em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you! Please fill out the form below and we'll get back to you soon.</p>
+        <form>
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+        <div class="info">
+            <p><strong>Delicious Bites</strong></p>
+            <p>123 Tasty Avenue, Food City</p>
+            <p>Phone: (123) 456-7890</p>
+            <p>Email: contact@deliciousbites.com</p>
+        </div>
+    </div>
+</body>
+</html>

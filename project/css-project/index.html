@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Brand Carousel Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { margin: 0; font-family: 'Poppins',Arial, sans-serif; }
+        nav {
+            background: #22b3c1;
+            color: #fff;
+            padding: 1.5em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav .logo img {
+            margin-left: 100px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1em;
+            margin: 0;
+            margin-right: 200px;
+            padding: 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        .carousel-container {
+            max-width: 100%;
+            max-height: 1000px;
+            margin: 0;
+            position: relative;
+            overflow: hidden;
+            background: red;
+        }
+
+        .carousel-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .carousel-images img {
+            width: 600px;
+            height: 200px;
+            object-fit: contain;
+            background: #fff;
+            padding: 1em;
+        }
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: #fff;
+            border: none;
+            font-size: 2em;
+            cursor: pointer;
+            padding: 0.2em 0.5em;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .carousel-btn.left { left: 10px; }
+        .carousel-btn.right { right: 10px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo"> 
+            <img src="./logo.png" alt="Logo">
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Deals</a></li>
+            <li><a href="#">Reservation</a></li>
+            <li><a href="#">Book Yours</a></li>
+        </ul>
+    </nav>
+    <div class="carousel-container">
+        <img src="https://picsum.photos/600/600" alt="Brand 1">
+
+        <h2> Take a Glimpse into The Beautiful Country of: </h1>
+        <h1> Thailand</h1>
+        
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,346 @@
+:root {
+    --main-color: #CA5BB4;
+    --secondary-color: #2ecc71;
+    --font-family: "Comfortaa",'roboto', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: var(--padding);
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: transparent;
+    color: black;
+    padding: 10px;
+    padding-right: 100px;
+    text-align: center;
+    display: flex;
+    height: 30px;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 120%;
+    color: white;
+    width: 20%;
+    z-index: 99;
+}
+
+header a {
+    text-decoration: none;
+    color: black;
+    font-weight: lighter;
+    margin-right: 20px;
+}
+
+header a:hover {    
+    color: var(--main-color);
+}
+
+.header-sub {
+    display: flex;
+}
+
+.header-sub-img {
+    width: 45%;
+    margin-top: -100px;
+}
+
+
+#about {
+    margin: 70px;
+    margin-left: 100px;
+    text-align: left;
+    width: 40%;
+    padding-left: 50px;
+}
+
+#about div {
+    margin-top: 30px;
+}
+
+#about a {
+    color: var(--main-color);
+    text-decoration: none;
+    border: 2px solid var(--main-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#about a:hover {
+    background-color: var(--main-color);
+    color: white;
+}
+
+#about h1 {
+    font-size: 250%;
+}
+
+#about h2 {
+    text-transform: uppercase;
+    color: var(--main-color);
+}
+
+/* -------------------- */
+/* section header */
+
+main {
+    padding: 40px;
+    /* background-color: rebeccapurple;    */
+}
+
+section .section-header {
+    display: flex;  
+    flex-direction:column;
+    align-items: center;   
+    margin: 0 auto; 
+}
+
+section .section-header h2 {
+    font-size: 250%;
+    color: black;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    font-family: "playfair display";
+}
+
+section .section-header hr {
+    width: 80px;
+    border: 2px solid var(--main-color);
+    margin-top: 10;
+    padding-top: 0;
+}
+
+/* work experience section  */
+
+#work article {
+    background-color: white;
+    margin: 20px 0px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;        
+    margin-bottom: 30px;
+}
+
+#work article div {
+    width: 20rem;
+    background-color: var(--main-color);
+    padding: 20px;
+    border-radius: 10px 0px 0px 10px;
+    text-align: center;
+    color: white;
+    font-weight: 20px;
+}
+
+#work article ul {
+    padding-top: 20px;
+}
+
+/* section resume (education) */
+
+#resume article {
+    background-color: white;
+    margin: 20px 0px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+#resume article h3 {
+    color: var(--main-color);
+}
+
+#resume article hr {
+    border: 1px solid var(--main-color);
+    margin-top: -10px;
+    margin-bottom: 20px;    
+}
+
+/* section skills table */
+.skills-table {
+    border-collapse: collapse;
+    margin-top: 20px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.skills-table table {
+    width: 60%;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    margin-bottom: 30px;
+    border: 1px solid var(--main-color);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.skills-table table th, .skills-table table td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.skills-table .stars {
+    color: var(--main-color);
+    letter-spacing: 5px;
+}
+
+/* section blog */
+#blog p {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+
+#blog ul  {
+    list-style: none; 
+    display: flex; 
+    padding: 0;
+    justify-content: center;
+}
+
+#blog ul li {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    margin-right: 30px;
+    width: 25%;
+}
+
+#blog ul li strong {
+    font-size: 120%;
+    margin-bottom: 10px;
+    color: var(--main-color);
+}
+
+#blog ul li p {
+    font-size: 90%;
+    color: #555;
+    text-align: left;
+}
+
+#blog ul li video, #blog ul li img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#blog ul li div a {
+    text-decoration: none;
+    color: var(--main-color);
+    font-weight: bold;
+    border-bottom: 1px solid var(--main-color);
+}
+
+/* Contact section */
+#contact {
+    text-align: center;
+    margin: 0 auto;
+    width: 50%;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contact form .form-group {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    font-weight: lighter;
+}
+
+#contact form input, #contact form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 0px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;    
+    resize: vertical;
+    font-family: var(--font-family);
+    font-weight: lighter;
+}
+
+#contact form .form-submit {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#contact form input[type="submit"] {
+    width: 20%;
+    margin-right: 23%;
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    cursor: pointer;        
+    font-weight: normal;
+    justify-content: end;
+    align-items: end;
+}
+
+
+/* section footer  */
+footer {
+    background-color: #ca5bb475;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+footer .social-media {
+    display: flex; 
+    justify-content: center;
+}
+
+footer .social-media ul {
+    list-style: none; 
+    display: flex; 
+    justify-content: center;
+}
+
+footer .social-media ul li {
+    width: 40px;
+    margin: 0 10px;
+}
+
+footer a {
+    color: var(--main-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer address {
+    font-style: normal;
+    margin-top: 10px;
+    font-size: 90%;
+}
+
+footer .footer-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,100 @@
+body {
+    background: #f4f4f4;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.card {
+    display: flex;
+    max-width: 1000px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    overflow: hidden;
+    width: 100%;
+}
+.card-image {
+    flex: 1 1 50%;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.card-form {
+    flex: 1 1 60%;
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.card-form h2 {
+    margin-top: 0;
+    margin-bottom: 5rem;
+    font-size: 1.5em;
+    font-weight: 300;
+}
+.card-form label {
+    margin-top: 12px;
+    margin-bottom: 4px;
+    font-weight: bold;
+    font-size: 0.8em;
+    text-transform: uppercase;
+}
+
+form .first-elem {
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+}
+
+.card-form input,
+.card-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 0px;
+    border-bottom: 1px solid lightgray;
+    font-size: 1em;
+    resize: vertical;
+    outline: none;
+}
+
+.card-form input:focus,
+.card-form textarea:focus {
+    border: 0px;
+    border-bottom: 1px solid gray;
+}
+
+.card-form button {
+    background: #2d9bb7;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+    width: 30%;
+    box-shadow: 1px 5px 10px rgba(0,0,0,0.1);
+    transition: background 0.2s;
+}
+.card-form button:hover {
+    background: #205f71;
+}
+
+@media (max-width: 800px) {
+    .card {
+        display: flex;
+        flex-direction: column;
+    }
+}

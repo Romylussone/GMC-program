@@ -1,0 +1,198 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Roboto";
+}
+
+
+header {
+    padding-left: 4rem;
+    background-color: white;
+    color: black;
+    box-shadow: 0px 2px 5px rgba(237, 205, 146, 0.2);
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+header img {
+    height: 5rem;
+}
+
+header nav {
+    display: flex;    
+    justify-content:flex-start;
+    align-items: center;
+    gap: 5rem;
+}
+
+header nav ul {
+    display: flex;
+    gap:1.5rem;
+}
+
+header nav ul li {
+    list-style: none;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+header nav ul li a:hover {
+    color: orange;
+}
+
+/* ----------- */
+#home {
+    display: flex;
+    height: 72vh;
+    background: rgba(237, 205, 146, 0.2);    
+    justify-content: center; 
+    align-items: center;     
+    margin-top: 5rem;
+}
+
+#home a {
+    background: rgb(255, 165, 0,0.5);
+    color: white;
+    padding: 5px;
+    text-decoration: none;
+    border-left: 3px solid green;
+}
+
+#home img {
+    object-fit: cover;
+    height: 70vh;
+}
+
+#home .welcome {
+    width: 30%;
+}
+
+#home .welcome h1 {
+    margin-bottom: 3rem;
+}
+
+#home .discover {
+    background-color: transparent;
+    color: orange;
+    padding: 10px;
+    border: 2px dashed orange;
+    border-radius: 20px;
+    margin-top: 2rem;
+}
+
+/* ----------------- */
+#about {
+    display: flex;
+    flex-direction: column;
+    margin: 3rem 7rem;
+}
+
+section>h2 {
+    font-family: 'Roboto';
+    background: rgb(255, 165, 0,0.5);
+    padding: .3rem 1rem;
+    border-left: 3px solid green;
+    font-weight: 300;
+    width: fit-content;
+}
+
+section p {
+    font-weight: 200;
+}
+
+/* ----------------------- */
+#CultureFood {    
+    margin: 3rem 7rem;   
+}
+
+
+/* -------------------------- */
+#Tourist {    
+    margin: 3rem 7rem; 
+}
+
+#Tourist> div {
+    display: flex;    
+    background-color: rgba(154, 216, 154, 0.473);
+    box-shadow: 1px 3px 7px rgba(255, 166, 0, 0.068);
+    justify-content: center;
+    align-items: center;
+}
+
+#Tourist div img {
+    height: 50vh;
+    min-height: 200px;
+    object-fit: cover;
+    width:30rem;
+}
+
+#Tourist div h3 
+{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#Tourist div p{
+    text-align: center;
+    justify-self: center;
+    padding: 2rem;
+    font-weight: 400;
+}
+
+#Tourist .spot {
+    margin-top: 3rem;
+}
+
+/* ---------------------- */
+#Funfact {    
+    margin: 3rem 7rem; 
+}
+
+#Funfact ul li {
+    list-style: none;   
+}
+
+/* ---------------------- */
+#Gallery {      
+    margin: 3rem 7rem; 
+}
+
+#Gallery .gallery {
+    display: grid;
+    gap: 0;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#Gallery img {
+    height: 40vh;
+    width: 100%;
+    min-height: 120px;
+    object-fit: cover;
+}
+
+/* ---------------------- */
+footer {
+    background-color: rgb(17, 37, 17);
+    justify-content: center;
+    display: flex;
+    color: white;
+    align-items: center;
+    padding: 1.5rem;
+}
+footer .footer-links {
+    text-align: center;
+}
+
+footer .footer-links a{
+    color: orange;
+    text-decoration: none;
+    text-align: center;
+}

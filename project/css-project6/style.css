@@ -1,0 +1,29 @@
+.animation ul {
+    display: flex;    
+    width: 100%;
+    justify-content: center;
+    gap: 30px;
+}
+
+.animation li {
+    border: 2px solid orange;
+    background-color: bisque;
+    height: 200px;
+    width: 200px;
+    list-style: none;
+    animation: fadeAnim 3s;
+}
+
+
+@keyframes fadeAnim {
+
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;        
+    }
+ 
+}
+

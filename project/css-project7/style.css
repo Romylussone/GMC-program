@@ -14,6 +14,12 @@ header {
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 99;
+    
+    @media (max-width: 758px) {  
+        
+       padding: 0px;
+    }
 }
 
 header img {
@@ -24,12 +30,32 @@ header nav {
     display: flex;    
     justify-content:flex-start;
     align-items: center;
-    gap: 5rem;
+    gap: 5rem;    
+    @media (max-width: 758px) {            
+        justify-content:center; 
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+header nav:hover ul {
+    @media (max-width: 758px) { 
+        display: flex;
+    }  
 }
 
 header nav ul {
     display: flex;
     gap:1.5rem;
+
+    @media (max-width: 758px) { 
+        display: none;     
+        align-items: center;
+        flex-direction: column;               
+        justify-content:center; 
+        gap: 10px;
+        width: 100%;
+    }
 }
 
 header nav ul li {
@@ -56,6 +82,14 @@ header nav ul li a:hover {
     justify-content: center; 
     align-items: center;     
     margin-top: 5rem;
+
+        @media (max-width: 758px) {     
+            height: fit-content;
+            width: 100%;
+            gap: 20px;
+            padding: 5px;
+            flex-direction: column;
+        }
 }
 
 #home a {
@@ -64,6 +98,7 @@ header nav ul li a:hover {
     padding: 5px;
     text-decoration: none;
     border-left: 3px solid green;
+
 }
 
 #home img {
@@ -73,6 +108,11 @@ header nav ul li a:hover {
 
 #home .welcome {
     width: 30%;
+    
+        @media (max-width: 758px) { 
+         width: 80%;   
+         text-align: center;                
+        }
 }
 
 #home .welcome h1 {
@@ -117,6 +157,10 @@ section p {
 /* -------------------------- */
 #Tourist {    
     margin: 3rem 7rem; 
+        @media (max-width: 758px) {  
+        flex-direction: column;        
+        margin: 3rem; 
+      }
 }
 
 #Tourist> div {
@@ -125,13 +169,20 @@ section p {
     box-shadow: 1px 3px 7px rgba(255, 166, 0, 0.068);
     justify-content: center;
     align-items: center;
+
+      @media (max-width: 758px) {  
+        flex-direction: column;
+      }
 }
 
 #Tourist div img {
     height: 50vh;
     min-height: 200px;
     object-fit: cover;
-    width:30rem;
+        
+    @media (max-width: 758px) {  
+        width: 100%;
+      }
 }
 
 #Tourist div h3 
@@ -163,13 +214,54 @@ section p {
 /* ---------------------- */
 #Gallery {      
     margin: 3rem 7rem; 
+
+        @media (max-width: 758px) {                      
+        margin: 3rem;  
+      }
 }
 
 #Gallery .gallery {
     display: grid;
     gap: 0;
     grid-template-columns: 1fr 1fr 1fr;
+
+    @media (max-width: 758px) {          
+        grid-template-columns: 1fr 1fr
+    }
 }
+
+#Gallery .gallery>div {
+    position: relative;    
+    overflow: hidden; 
+}
+
+#Gallery .gallery>div:hover .titre {
+    top: 0;
+    opacity: 1;
+    transition: all .5s ease;
+}
+
+#Gallery .gallery>div .titre {
+    position: absolute;
+    top: 100px;       
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+    align-items: center;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    opacity: 0;
+}
+
+#Gallery .gallery>div .titre h3 {
+    text-transform: uppercase;
+}
+
 
 #Gallery img {
     height: 40vh;

@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>La Belle Assiette — Fictional Restaurant</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="sticky-top bg-white shadow-sm" role="banner">
+        <nav class="navbar navbar-expand-lg container" aria-label="Primary navigation">
+            <a class="navbar-brand fw-bold" href="#">La Belle Assiette</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"
+                aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navMain">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Hero -->
+        <section id="home">
+            <div>
+                <div class="container text-center py-5">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <h1 class="display-5 fw-bold">Welcome to La Belle Assiette</h1>
+                            <p class="lead mb-4">Seasonal produce • Handcrafted dishes • Warm atmosphere</p>
+                            <a class="btn btn-outline-dark btn-lg" href="#menu">Explore the Menu</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu -->
+        <section id="menu" class="py-5">
+            <div class="container">
+                <header class="mb-4">
+                    <h2 class="h3 fw-bold">Our Menu</h2>
+                    <p class="text-muted">A selection of house favorites and seasonal specials.</p>
+                </header>
+
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <article class="col">
+                        <div class="card h-100 shadow-sm">
+                            <img src="./images/cesar-salade.jpg" class="card-img-top menu-card-img" alt="Caesar Salad">
+                            <div class="card-body">
+                                <h3 class="h5 card-title">Caesar Salad</h3>
+                                <p class="card-text text-muted">Romaine lettuce, croutons, parmesan, Caesar dressing.</p>
+                                <p class="mb-5"> <strong> 6 500 f</strong> </p>
+                                <a href="#" class="btn btn-outline-danger">Order Now</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="col">
+                        <div class="card h-100 shadow-sm">
+                            <img src="./images/hamburger.jpeg" class="card-img-top menu-card-img" alt="Hamburger">
+                            <div class="card-body">
+                                <h3 class="h5 card-title">Hamburger</h3>
+                                <p class="card-text text-muted">Juicy beef patty, lettuce, tomato, onion, special sauce.</p>
+                                <p class="mb-5"> <strong> 4 500 f</strong> </p>
+                                <a href="#" class="btn btn-outline-danger">Order Now</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="col">
+                        <div class="card h-100 shadow-sm">
+                            <img src="./images/escargot.jpg" class="card-img-top menu-card-img" alt="Escargot">
+                            <div class="card-body">
+                                <h3 class="h5 card-title">Escargot de Bourgogne</h3>
+                                <p class="card-text text-muted">Garlic herb butter, parsley, baguette.</p>
+                                <p class="mb-5 "> <strong> 7 000 f</strong> </p>
+                                <a href="#" class="btn btn-outline-danger">Order Now</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- More items demonstrating grid flexibility -->
+                    <article class="col">
+                        <div class="card h-100 shadow-sm">
+                            <img src="./images/Le-garba.jpg" class="card-img-top menu-card-img" alt="Garba">
+                            <div class="card-body">
+                                <h3 class="h5 card-title">Garba</h3>
+                                <p class="card-text text-muted">A traditional Ivorian dish made with fish, vegetables, and spices.</p>
+                                <p class="mb-5 "> <strong> 2 000 f</strong> </p>
+                                <a href="#" class="btn btn-outline-danger">Order Now</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="col">
+                        <div class="card h-100 shadow-sm">
+                            <img src="./images/soupe-du-pecheur.jpg" class="card-img-top menu-card-img" alt="Soupe du Pecheur">
+                            <div class="card-body">
+                                <h3 class="h5 card-title">Soupe du Pecheur</h3>
+                                <p class="card-text text-muted">A hearty fish soup with tomatoes, garlic, and herbs.</p>
+                                <p class="mb-5 "> <strong> 10 000 f</strong> </p>
+                                <a href="#" class="btn btn-outline-danger">Order Now</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="col">
+                        <div class="card h-100 shadow-sm">
+                            <img src="./images/foutou-graine.jpg" class="card-img-top menu-card-img" alt="Foutou Graine">
+                            <div class="card-body">
+                                <h3 class="h5 card-title">Foutou, sauce graine</h3>
+                                <p class="card-text text-muted">A traditional Ivorian dish made with cassava and plantains.</p>
+                                <p class="mb-5 "> <strong> 4 000 f</strong> </p>
+                                <a href="#" class="btn btn-outline-danger">Order Now</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="py-5 bg-light">
+            <div class="container">
+                <header class="mb-4">
+                    <h2 class="h3 fw-bold">About Us</h2>
+                    <p class="text-muted">A little story behind the food and people who make it.</p>
+                </header>
+
+                <div class="row align-items-center g-4">
+                    <div class="col-md-6">
+                        <figure class="mb-0">
+                            <img src="./images/people-in-restaurant.jpg" class="img-fluid rounded shadow-sm" alt="Restaurant interior">
+                            <figcaption class="visually-hidden">Interior of La Belle Assiette</figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-md-6">
+                        <p>
+                            La Belle Assiette is a neighborhood restaurant born from a love of seasonal ingredients and relaxed hospitality.
+                            Our team sources local produce, works with regional producers, and crafts a menu that changes with the seasons.
+                        </p>
+                        <p class="mb-0">
+                            Whether you're stopping by for a weekday lunch or celebrating a special evening, we aim to make every visit memorable.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="py-5">
+            <div class="container">
+                <header class="mb-4">
+                    <h2 class="h3 fw-bold">Contact</h2>
+                    <p class="text-muted">Get in touch for reservations or general inquiries.</p>
+                </header>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <form class="needs-validation" novalidate>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="contactName" class="form-label">Name</label>
+                                    <input id="contactName" type="text" class="form-control" required>
+                                    <div class="invalid-feedback">Please enter your name.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="contactEmail" class="form-label">Email</label>
+                                    <input id="contactEmail" type="email" class="form-control" required>
+                                    <div class="invalid-feedback">Please enter a valid email address.</div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="contactMessage" class="form-label">Message</label>
+                                    <textarea id="contactMessage" class="form-control" rows="5" required></textarea>
+                                    <div class="invalid-feedback">Please write a message.</div>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-outline-primary" type="submit">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <aside class="col-lg-6">
+                        <h3 class="h6 fw-semibold">Visit Us</h3>
+                        <p class="mb-1">123 Market Lane<br>Springfield, Anywhere</p>
+                        <p class="mb-1">Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                        <p class="mb-0">Hours: Tue–Sun 11:30am – 10:00pm (Closed Mon)</p>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-4">
+        <div class="container d-flex flex-column flex-md-row justify-content-center align-items-center">
+            <p class="mb-2 mb-md-0 small">©2025 La Belle Assiette — All rights reserved.</p>
+            <nav aria-label="Footer">
+                <ul class="list-unstyled d-flex mb-0">
+                    <li><a class="text-muted small ms-3" href="#privacy">Privacy</a></li>
+                    <li><a class="text-muted small ms-3" href="#terms">Terms</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS (Popper included) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

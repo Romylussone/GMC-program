@@ -1,0 +1,30 @@
+FUNCTION BinarySearch (arr : ARRAY_OF INTEGER,n : INTEGER, x : INTEGER) : INTEGER
+VAR       
+    found : BOOLEAN;
+    result : INTEGER;
+    mid : INTEGER;
+    start : INTEGER;
+    end : INTEGER;
+BEGIN
+    // Initialize variables
+    found := FALSE;
+    result := -1;
+    start := 0;
+    end := n - 1;
+    REPEAT
+
+        mid := (start + end) / 2;
+        IF (arr[mid] > x) THEN
+            start := mid + 1;
+        ELSIF (arr[mid] < x) THEN
+            end := mid - 1;
+        ELSE
+            found := TRUE;
+            result := mid;
+        ENDIF;
+
+    UNTIL (found OR start > end)
+    
+    // Return result
+    RETURN result;
+END

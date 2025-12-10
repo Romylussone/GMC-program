@@ -1,0 +1,22 @@
+ALGORITHM MaxNumber
+VAR
+    numbers : ARRAY_OF INTEGER;
+    i, max : INTEGER;
+BEGIN
+    WRITE("Enter the size of array: ");
+    READ(i);
+    
+    FOR i FROM 0 TO i-1 DO
+        WRITE("Enter number: ");
+        READ(numbers[i]);
+    END_FOR
+    
+    max := numbers[0];
+    FOR i FROM 1 TO LENGTH(numbers)-1 DO
+        IF numbers[i] > max THEN
+            max := numbers[i];
+        END_IF
+    END_FOR
+    
+    WRITE("Maximum number is: ", max);
+END

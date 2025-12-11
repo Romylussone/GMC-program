@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Romaric Kwakou</title>
+</head>
+<body class="bg-[#f4f4f4] font-['Comfortaa',sans-serif]">
+    <header class="flex justify-between items-center p-4 text-slate-900 shadow-sm">
+        <h1 class="text-xl md:text-white z-50 text-white pb-3">Romaric Kwakou</h1>
+        <a href="#" class="lg:hidden z-50 text-black">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </a>
+        <nav class="hidden lg:block z-50  w-full md:w-auto p-4 md:p-0 rounded-md shadow-md md:shadow-none">
+            <ul class="flex space-x-4 lowercase pr-10 gap-5 ">
+                <li class="hover:text-purple-600"><a href="./index.html">Home</a></li>
+                <li class="hover:text-purple-600"><a href="#project">Project</a></li>
+                <li class="hover:text-purple-600"><a href="#contact">Contact</a></li>
+            </ul>            
+        </nav>       
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-[50rem] sm:h-[60rem] md:h-[70rem] lg:h-[30rem]" id="hero">
+        <div class="absolute top-[-5rem] z-10 flex flex-col lg:flex-row gap-12">
+            <img class="bg-cover w-[90%] lg:w-[45%]" src="./images/me-black-bg.png" alt="Header Image"/>
+            <!-- about me -->
+            <div class="flex flex-col justify-center gap-5 m-5 sm:mt-20 md:pt-10">
+                <h2 class="text-2xl uppercase text-purple-700 font-bold">FullStack Developer</h2>
+                <h1 class="text-5xl font-bold">Bonjour , I am Romaric Kwakou</h1>
+                <p> I'm a FullStack Developer with knowledge in .NET (WinForms, WPF, ASP WEB API, WCF, MAUI, and XAMARIN).
+                    I also have already worked with PHP (LARAVEL MVC and API) and JS.
+                    I am open to any technologies and I am passionate about Development and IA too. </p>                        
+                <div>
+                    <a class="border-2 border-purple-500 p-3 text-purple-500 rounded-md font-bold" href="./file/cv.pdf" target="_blank" download>Download My CV</a>                     
+                </div>
+            </div>
+        </div>
+    </section> 
+
+    <main >
+        <!-- some projects -->
+        <section id="project">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div class="flex items-end justify-between">
+                    <div>
+                        <h2 class="text-5xl font-bold font-['playfair display',sans-serif] py-1"> <span class="text-purple-500
+                                        ">Pro</span>ject </h2>
+                        <hr class="w-30 border-3 border-purple-500 mt-3" />
+                        <p class="text-gray-600 mt-2">A selection of recent work.</p>
+                    </div>
+                    <a href="#" class="hidden sm:inline-block text-purple-600 hover:underline">See all</a>
+                </div>
+                <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    <!-- Card -->
+                    <article class="bg-white rounded-lg shadow hover:shadow-md transition overflow-hidden">
+                        <img class="w-full h-40 object-cover" src="https://images.unsplash.com/photo-1522199710521-72d69614c702?q=80&w=1200&auto=format&fit=crop" alt="Project 1" />
+                        <div class="p-5">
+                            <h3 class="font-semibold text-lg">Portfolio Website</h3>
+                            <p class="mt-2 text-gray-600">Responsive personal portfolio built with Tailwind, focusing on accessibility and performance.</p>
+                            <div class="mt-4 flex gap-2">
+                                <span class="px-2 py-1 text-xs bg-blue-50 text-blue-700 rounded">Tailwind</span>
+                                <span class="px-2 py-1 text-xs bg-gray-100 text-gray-700 rounded">HTML</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="bg-white rounded-lg shadow hover:shadow-md transition overflow-hidden">
+                        <img class="w-full h-40 object-cover" src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop" alt="Project 2" />
+                        <div class="p-5">
+                            <h3 class="font-semibold text-lg">Blog Platform</h3>
+                            <p class="mt-2 text-gray-600">A clean, component-based blog layout with cards, categories, and newsletter signup.</p>
+                            <div class="mt-4 flex gap-2">
+                                <span class="px-2 py-1 text-xs bg-green-50 text-green-700 rounded">React</span>
+                                <span class="px-2 py-1 text-xs bg-indigo-50 text-indigo-700 rounded">CSS</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="bg-white rounded-lg shadow hover:shadow-md transition overflow-hidden">
+                        <img class="w-full h-40 object-cover" src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop" alt="Project 3" />
+                        <div class="p-5">
+                            <h3 class="font-semibold text-lg">UI Components</h3>
+                            <p class="mt-2 text-gray-600">Reusable Tailwind components for forms, cards, and navigation systems.</p>
+                            <div class="mt-4 flex gap-2">
+                                <span class="px-2 py-1 text-xs bg-purple-50 text-purple-700 rounded">Components</span>
+                                <span class="px-2 py-1 text-xs bg-gray-100 text-gray-700 rounded">Design</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <h2 class="text-5xl font-bold font-['playfair display',sans-serif] py-1"> 
+                <span class="text-purple-500">Ski</span>lls
+            </h2>
+            <hr class="w-30 border-3 border-purple-500 mt-3" />
+            <p class="text-gray-600 mt-2">Core technologies and tools I use regularly.</p>
+            <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+                <div class="flex items-center gap-2 p-4 bg-white rounded shadow-sm">
+                    <span class="h-2 w-2 rounded-full bg-blue-600"></span><span class="font-medium">HTML</span>
+                </div>
+                <div class="flex items-center gap-2 p-4 bg-white rounded shadow-sm">
+                    <span class="h-2 w-2 rounded-full bg-indigo-600"></span><span class="font-medium">CSS / Tailwind</span>
+                </div>
+                <div class="flex items-center gap-2 p-4 bg-white rounded shadow-sm">
+                    <span class="h-2 w-2 rounded-full bg-yellow-500"></span><span class="font-medium">JavaScript</span>
+                </div>
+                <div class="flex items-center gap-2 p-4 bg-white rounded shadow-sm">
+                    <span class="h-2 w-2 rounded-full bg-green-600"></span><span class="font-medium">React</span>
+                </div>
+                <div class="flex items-center gap-2 p-4 bg-white rounded shadow-sm">
+                    <span class="h-2 w-2 rounded-full bg-purple-600"></span><span class="font-medium">Node.js</span>
+                </div>
+                <div class="flex items-center gap-2 p-4 bg-white rounded shadow-sm">
+                    <span class="h-2 w-2 rounded-full bg-gray-600"></span><span class="font-medium">Git</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <h2 class="text-5xl font-bold font-['playfair display',sans-serif] py-1">
+                <span class="text-purple-500">Con</span>tact me
+            </h2>
+            <hr class="w-30 border-3 border-purple-500 mt-3" />
+            <p class="text-gray-600 mt-2">Have a project in mind? Let’s talk.</p>
+            <form class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 bg-white p-6 rounded-lg shadow">
+                <div class="sm:col-span-1">
+                    <label class="block text-sm font-medium mb-1">Name</label>
+                    <input type="text" placeholder="Your name"
+                        class="w-full rounded border-gray-300 focus:border-purple-600 focus:ring-purple-600" />
+                </div>
+                <div class="sm:col-span-1">
+                    <label class="block text-sm font-medium mb-1">Email</label>
+                    <input type="email" placeholder="you@example.com"
+                        class="w-full rounded border-gray-300 focus:border-purple-600 focus:ring-purple-600" />
+                </div>
+                <div class="sm:col-span-2">
+                    <label class="block text-sm font-medium mb-1">Message</label>
+                    <textarea rows="5" placeholder="Tell me about your project..."
+                        class="w-full rounded border-gray-300 focus:border-purple-600 focus:ring-purple-600"></textarea>
+                </div>
+                <div class="sm:col-span-2 flex justify-end">
+                    <button type="submit"
+                        class="inline-flex items-center px-5 py-3 rounded bg-purple-600 text-white hover:bg-purple-500">
+                        Send Message
+                    </button>
+                </div>
+            </form>
+        </section>        
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-purple-100 border-t">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                    <a href="#" aria-label="Twitter" class="text-gray-600 hover:text-purple-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M23 3a10.9 10.9 0 0 1-3.14 1.53A4.48 4.48 0 0 0 12.07 7v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="GitHub" class="text-gray-600 hover:text-purple-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.74.08-.74 1.2.09 1.83 1.22 1.83 1.22 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.31 1.23a11.5 11.5 0 0 1 6.02 0c2.3-1.55 3.31-1.23 3.31-1.23.66 1.65.25 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.62-5.47 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="LinkedIn" class="text-gray-600 hover:text-purple-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5ZM3 9h4v12H3V9Zm7 0h3.6v1.7h.05a3.95 3.95 0 0 1 3.55-1.95c3.8 0 4.5 2.5 4.5 5.7V21h-4v-4.9c0-1.2-.02-2.8-1.7-2.8-1.7 0-2 1.3-2 2.7V21h-4V9Z" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="text-sm text-gray-600">&copy; 2025 Romaric Kwakou. All rights reserved.</div>
+                <div class="flex gap-4 text-sm">
+                    <a href="#hero" class="hover:text-purple-600">Home</a>
+                    <a href="#project" class="hover:text-purple-600">Projects</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

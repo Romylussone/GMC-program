@@ -43,14 +43,15 @@ CoachID PK, FK → COACH(CoachID)
 
 2- Proper ER Diagram
 This version respects entities, primary keys, relationships, and cardinalities.
-erDiagram
-GYMNASIUM {
-int GymID PK
-string Name
-string Address
-string TelephoneNumber
-}
 
+
+    erDiagram
+    GYMNASIUM {
+        int GymID PK
+        string Name
+        string Address
+        string TelephoneNumber
+    }
     MEMBER {
         int MemberID PK
         string LastName

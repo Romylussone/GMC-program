@@ -1,0 +1,30 @@
+ALGORITHM SentenceAnalysis
+VAR
+    character: CHAR
+    length, wordCount, vowelCount: INTEGER
+BEGIN
+    length := 0
+    wordCount := 0
+    vowelCount := 0
+
+    REPEAT
+        READ(character)
+        length := length + 1
+        
+        IF character = ' ' THEN
+            wordCount := wordCount + 1
+        END_IF
+        
+        IF character IN ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'] THEN
+            vowelCount := vowelCount + 1
+        END_IF
+        
+    UNTIL character = '.'
+
+    wordCount := wordCount + 1
+    length := length - 1
+
+    WRITE("Length: ", length)
+    WRITE("Words: ", wordCount)
+    WRITE("Vowels: ", vowelCount)
+END

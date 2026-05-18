@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Page layout */
+body {
+  background: #f4f6f8;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Form container */
+form {
+  background: #ffffff;
+  padding: 25px 30px;
+  width: 350px;
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Inputs */
+input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+/* Error message */
+small.error {
+  display: block;
+  height: 14px;
+  margin-top: 4px;
+  font-size: 12px;
+  color: #e74c3c;
+}
+
+/* Input states */
+input.error-border {
+  border-color: #e74c3c;
+}
+
+input.success-border {
+  border-color: #2ecc71;
+}
+
+/* Password strength indicator */
+.password-strength {
+  display: block;
+  height: 14px;
+  margin-top: 4px;
+  font-size: 12px;
+  color: #3498db;
+}
+
+/* Submit button */
+button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  background: #3498db;
+  border: none;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s, opacity 0.3s;
+}
+
+/* Button hover */
+button:hover {
+  background: #2980b9;
+}
+
+/* Disabled button (bonus) */
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

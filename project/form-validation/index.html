@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Form Validation</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="./validation.js"></script>
+</head>
+<body>
+
+    <form id="registerForm">
+      <h1>Register</h1>
+    <input type="text" id="idusername" name="username" placeholder="Username" />
+    <small class="error"></small>
+
+    <input type="email" name="email" placeholder="Email" />
+    <small class="error"></small>
+
+    <input type="password" name="password" placeholder="Password" />
+    <small class="error"></small>
+    <small class="password-strength"></small>
+
+    <button type="submit" >Register</button>
+    </form>
+
+</body>
+</html>

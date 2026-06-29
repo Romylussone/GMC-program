@@ -1,0 +1,10 @@
+{
+  "name": "efficient-algorithm-task-scheduler",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Lightweight task scheduler with sorting, grouping, overlap detection, and complexity analysis.",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node taskScheduler.test.js"
+  }
+}

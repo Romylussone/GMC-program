@@ -1,0 +1,6 @@
+import Image from "next/image";
+import Layout from "../components/Layout";
+import styles from "../styles/Pages.module.css";
+
+const skills = ["JavaScript", "TypeScript", "React", "Next.js", "HTML & CSS", "Git", "Figma", "Accessibility"];
+export default function About() { return <Layout title="About | Raya K."><section className={styles.pageHero}><p className="eyebrow">About me</p><h1>A curious builder with an eye for the <em>details.</em></h1></section><section className={styles.aboutGrid}><div className={styles.aboutImage}><Image src="/images/profile-art.svg" alt="Illustrated portrait of Raya" fill sizes="(max-width: 760px) 100vw, 40vw" /></div><div className={styles.aboutCopy}><p>I&apos;m a frontend developer drawn to the intersection of technology, design and everyday life. I enjoy taking a rough idea and giving it a thoughtful, easy-to-use shape.</p><p>My approach is curious and collaborative: listen closely, simplify the complicated bits, then make every interaction feel intentional.</p><a href="mailto:hello@rayak.dev" className="textLink">Start a conversation <span>→</span></a></div></section><section className={styles.skills}><p className="eyebrow">My toolkit</p><div>{skills.map((skill, i) => <span key={skill}><b>0{i + 1}</b>{skill}</span>)}</div></section></Layout>; }

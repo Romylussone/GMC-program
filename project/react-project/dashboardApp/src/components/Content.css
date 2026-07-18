@@ -1,0 +1,23 @@
+.dashboard-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.dashboard-content__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dashboard-content__intro h2 {
+  font-size: 1.75rem;
+  color: var(--heading);
+}
+
+.dashboard-content__intro p {
+  max-width: 42rem;
+  line-height: 1.6;
+}

@@ -1,0 +1,1 @@
+export const b = {one : "one", two : "two", three : "three"};

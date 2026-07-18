@@ -1,0 +1,35 @@
+:root {
+  --page-bg: #f3f5f9;
+  --surface: #ffffff;
+  --surface-alt: #eef2f7;
+  --surface-dark: #1f2937;
+  --border: #d7deea;
+  --text: #334155;
+  --heading: #0f172a;
+  --shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  --sidebar-shadow: inset -1px 0 0 #d7deea;
+  --font-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: var(--font-base);
+  color: var(--text);
+  background: var(--page-bg);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}

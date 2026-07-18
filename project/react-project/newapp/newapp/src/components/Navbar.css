@@ -1,0 +1,28 @@
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 70px;    
+}
+
+.hero { 
+    background-color: aliceblue;
+    height: 100vh;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: #333;
+}
+
+.hero .buttons button {
+    margin-right: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+}

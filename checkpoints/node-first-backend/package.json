@@ -1,0 +1,14 @@
+{
+  "name": "node-first-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Node.js module exercises",
+  "scripts": {
+    "read-file": "node readFile.js",
+    "report": "node main.js",
+    "send-email": "node emailSender.js"
+  },
+  "dependencies": {
+    "nodemailer": "^9.0.5"
+  }
+}

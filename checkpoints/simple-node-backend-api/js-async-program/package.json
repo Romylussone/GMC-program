@@ -1,0 +1,10 @@
+{
+  "name": "js-async-program",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Async/await checkpoint solutions",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  }
+}

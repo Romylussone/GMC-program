@@ -1,0 +1,16 @@
+{
+  "name": "node-second-backend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "hello": "node hello-world.js",
+    "server": "node server.js",
+    "files": "node file-system.js",
+    "password": "node password-generator.js",
+    "email": "node email-sender.js"
+  },
+  "dependencies": {
+    "generate-password": "^1.7.1",
+    "nodemailer": "^9.0.5"
+  }
+}

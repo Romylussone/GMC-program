@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#4f46e5" />
+    <title>Skyline Weather</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="weather-card" aria-labelledby="app-title">
+        <header class="topbar">
+          <div class="brand">
+            <span class="brand-mark" aria-hidden="true">☼</span>
+            <h1 id="app-title">Skyline</h1>
+          </div>
+          <p id="today" class="today"></p>
+        </header>
+
+        <form id="search-form" class="search-form" role="search">
+          <label class="sr-only" for="city-input">Search for a city</label>
+          <input id="city-input" type="search" placeholder="Search city..." autocomplete="off" required />
+          <button type="submit" aria-label="Search weather">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z" /></svg>
+          </button>
+        </form>
+
+        <p id="status" class="status" aria-live="polite"></p>
+
+        <div id="weather-content" class="weather-content" hidden>
+          <div class="hero-weather">
+            <div>
+              <p id="location" class="location"></p>
+              <p id="condition" class="condition"></p>
+              <div class="temperature-row">
+                <span id="weather-icon" class="weather-icon" aria-hidden="true"></span>
+                <p><span id="temperature" class="temperature"></span><sup>°C</sup></p>
+              </div>
+              <p id="feels-like" class="feels-like"></p>
+            </div>
+            <div class="weather-orb" aria-hidden="true"></div>
+          </div>
+
+          <div class="details-grid" aria-label="Weather details">
+            <article class="detail">
+              <span class="detail-icon">◌</span>
+              <div><span>Humidity</span><strong id="humidity"></strong></div>
+            </article>
+            <article class="detail">
+              <span class="detail-icon">↗</span>
+              <div><span>Wind speed</span><strong id="wind-speed"></strong></div>
+            </article>
+            <article class="detail">
+              <span class="detail-icon">◒</span>
+              <div><span>Visibility</span><strong id="visibility"></strong></div>
+            </article>
+            <article class="detail">
+              <span class="detail-icon">☂</span>
+              <div><span>Precipitation</span><strong id="precipitation"></strong></div>
+            </article>
+          </div>
+        </div>
+
+        <p class="data-credit">Weather data by Open-Meteo</p>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

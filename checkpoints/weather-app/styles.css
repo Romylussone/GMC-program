@@ -1,0 +1,77 @@
+:root {
+  color-scheme: dark;
+  font-family: "DM Sans", sans-serif;
+  background: #11183b;
+  color: #f8fbff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 15% 10%, #5a42c5 0, transparent 28rem), radial-gradient(circle at 88% 95%, #076d8b 0, transparent 30rem), #11183b;
+}
+
+.app-shell { width: min(100%, 720px); padding: 28px 18px; }
+
+.weather-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 570px;
+  padding: clamp(24px, 5vw, 44px);
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: 30px;
+  background: linear-gradient(145deg, rgba(82, 77, 184, .88), rgba(23, 65, 126, .88));
+  box-shadow: 0 30px 70px rgba(4, 7, 32, .45);
+}
+
+.weather-card::before, .weather-card::after { content: ""; position: absolute; pointer-events: none; border-radius: 50%; filter: blur(2px); }
+.weather-card::before { width: 320px; height: 320px; right: -140px; top: 90px; background: rgba(255, 201, 76, .14); }
+.weather-card::after { width: 220px; height: 220px; left: -120px; bottom: -100px; background: rgba(64, 211, 255, .14); }
+
+.topbar, .search-form, .weather-content, .data-credit, .status { position: relative; z-index: 1; }
+.topbar { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.brand { display: flex; align-items: center; gap: 10px; }
+.brand h1 { margin: 0; font: 600 1.35rem "Outfit", sans-serif; letter-spacing: .02em; }
+.brand-mark { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 10px; color: #172b74; background: #f9c64e; font-size: 1.45rem; }
+.today { margin: 0; color: rgba(255,255,255,.72); font-size: .84rem; }
+
+.search-form { display: flex; margin-top: 40px; border-radius: 14px; background: rgba(255,255,255,.13); border: 1px solid rgba(255,255,255,.14); }
+.search-form input { width: 100%; min-width: 0; padding: 16px 18px; border: 0; outline: 0; background: transparent; color: inherit; font: inherit; }
+.search-form input::placeholder { color: rgba(255,255,255,.64); }
+.search-form button { width: 56px; border: 0; border-left: 1px solid rgba(255,255,255,.15); background: transparent; color: inherit; cursor: pointer; transition: background .2s ease; }
+.search-form button:hover, .search-form button:focus-visible { background: rgba(255,255,255,.15); outline: 0; }
+.search-form svg { width: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+.status { min-height: 26px; margin: 12px 2px 0; color: #ffe9a7; font-size: .9rem; }
+.status:empty { display: none; }
+
+.hero-weather { display: flex; justify-content: space-between; align-items: center; min-height: 245px; padding: 20px 4px; }
+.location { margin: 0 0 5px; font: 600 clamp(1.45rem, 4vw, 2rem) "Outfit", sans-serif; }
+.condition, .feels-like { margin: 0; color: rgba(255,255,255,.72); }
+.temperature-row { display: flex; align-items: center; gap: 12px; margin: 10px 0 0; }
+.temperature-row p { margin: 0; font-family: "Outfit", sans-serif; }
+.temperature { font-size: clamp(4.4rem, 14vw, 6.7rem); line-height: .95; font-weight: 600; letter-spacing: -.075em; }
+sup { vertical-align: top; font-size: 1.35rem; }
+.weather-icon { font-size: clamp(2.2rem, 7vw, 3.5rem); }
+.weather-orb { width: 150px; height: 150px; border-radius: 50%; background: radial-gradient(circle at 34% 28%, #fff7c3 0 7%, #ffd15d 30%, #ef8d28 72%); box-shadow: 0 0 50px rgba(255, 195, 67, .55); opacity: .88; }
+
+.details-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.detail { display: flex; align-items: center; gap: 12px; min-height: 83px; padding: 14px; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; background: rgba(10, 25, 80, .22); }
+.detail-icon { display: grid; place-items: center; width: 35px; height: 35px; border-radius: 50%; background: rgba(255,255,255,.14); color: #fde48c; font-size: 1.35rem; }
+.detail div { display: grid; gap: 4px; }
+.detail span:not(.detail-icon) { color: rgba(255,255,255,.65); font-size: .78rem; }
+.detail strong { font-size: 1rem; }
+.data-credit { margin: 28px 0 0; color: rgba(255,255,255,.52); text-align: center; font-size: .72rem; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+
+@media (max-width: 470px) {
+  .weather-card { min-height: 100vh; border-radius: 0; }
+  .app-shell { padding: 0; }
+  .today { display: none; }
+  .weather-orb { width: 105px; height: 105px; }
+  .hero-weather { min-height: 225px; }
+}

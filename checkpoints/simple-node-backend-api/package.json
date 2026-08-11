@@ -1,0 +1,10 @@
+{
+  "name": "simple-node-backend-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "In-memory REST API for to-do tasks using Node.js core modules.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  }
+}

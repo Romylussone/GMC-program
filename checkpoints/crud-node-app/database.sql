@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS product_crud;
+USE product_crud;
+
+CREATE TABLE IF NOT EXISTS products (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL,
+  price DECIMAL(10, 2) NOT NULL,
+  category VARCHAR(255) NULL,
+  inStock BOOLEAN NOT NULL DEFAULT TRUE,
+  PRIMARY KEY (id),
+  CONSTRAINT products_price_non_negative CHECK (price >= 0)
+);

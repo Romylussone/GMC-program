@@ -1,0 +1,20 @@
+{
+  "name": "mongoose-first-project",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Commented Mongoose database management checkpoint",
+  "main": "myApp.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node --test",
+    "check": "node --check myApp.js && node --check index.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1",
+    "mongodb": "4.17.2",
+    "mongoose": "6.13.11"
+  }
+}

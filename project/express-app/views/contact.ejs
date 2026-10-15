@@ -1,0 +1,15 @@
+<%- include('partials/header') %>
+<section class="contact-wrap">
+  <div class="contact-intro"><p class="eyebrow">Get in touch</p><h1>Let's make<br>something <em>matter.</em></h1><p>Tell us a little about what is next. We’ll be in touch within two business days.</p><a href="mailto:hello@northstar.studio">hello@northstar.studio ↗</a></div>
+  <div class="contact-card">
+    <% if (sent) { %><div class="success"><span>✦</span><h2>Message received.</h2><p>Thanks for reaching out. We’ll get back to you soon.</p></div><% } else { %>
+    <form method="post" action="/contact">
+      <label>Your name<input required name="name" type="text" placeholder="Jane Smith"></label>
+      <label>Email address<input required name="email" type="email" placeholder="jane@company.com"></label>
+      <label>What can we help with?<select name="service"><option>Choose a service</option><option>Brand strategy</option><option>Visual identity</option><option>Digital experience</option><option>Something else</option></select></label>
+      <label>Tell us a little more<textarea required name="message" rows="4" placeholder="A few details about your project…"></textarea></label>
+      <button class="button button-dark" type="submit">Send inquiry <span>↗</span></button>
+    </form><% } %>
+  </div>
+</section>
+<%- include('partials/footer') %>

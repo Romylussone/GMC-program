@@ -1,0 +1,165 @@
+{
+  "info": {
+    "name": "Simple REST API - Users",
+    "description": "Run requests in order against the running API. Creates one uniquely named test user, checks CRUD and error responses, and deletes that user at the end. No existing users are changed.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:5050" },
+    { "key": "userId", "value": "" },
+    { "key": "testEmail", "value": "" }
+  ],
+  "item": [
+    {
+      "name": "GET - List users",
+      "request": { "method": "GET", "url": "{{baseUrl}}/users" },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('Returns 200 and an array', () => { pm.response.to.have.status(200); pm.expect(pm.response.json()).to.be.an('array'); });"
+      ] } }]
+    },
+    {
+      "name": "POST - Create user",
+      "event": [
+        { "listen": "prerequest", "script": { "type": "text/javascript", "exec": [
+          "pm.collectionVariables.set('testEmail', 'checkpoint-' + pm.variables.replaceIn('{{$guid}}') + '@example.com');",
+          "pm.collectionVariables.unset('userId');"
+        ] } },
+        { "listen": "test", "script": { "type": "text/javascript", "exec": [
+          "pm.test('Returns 201 and the saved user', () => {",
+          "  pm.response.to.have.status(201);",
+          "  const user = pm.response.json();",
+          "  pm.expect(user._id).to.match(/^[a-f0-9]{24}$/);",
+          "  pm.expect(user.name).to.eql('Ada Lovelace');",
+          "  pm.expect(user.email).to.eql(pm.collectionVariables.get('testEmail'));",
+          "  pm.expect(user.age).to.eql(30);",
+          "  pm.collectionVariables.set('userId', user._id);",
+          "});"
+        ] } }
+      ],
+      "request": {
+        "method": "POST", "url": "{{baseUrl}}/users",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\"name\":\"Ada Lovelace\",\"email\":\"{{testEmail}}\",\"age\":30}" }
+      }
+    },
+    {
+      "name": "GET - Confirm creation in MongoDB",
+      "request": { "method": "GET", "url": "{{baseUrl}}/users" },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('Saved user appears in the database results', () => { pm.response.to.have.status(200); const user = pm.response.json().find(u => u._id === pm.collectionVariables.get('userId')); pm.expect(user).to.be.an('object'); pm.expect(user.email).to.eql(pm.collectionVariables.get('testEmail')); });"
+      ] } }]
+    },
+    {
+      "name": "POST - Reject duplicate email",
+      "request": {
+        "method": "POST", "url": "{{baseUrl}}/users",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\"name\":\"Duplicate\",\"email\":\"{{testEmail}}\"}" }
+      },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('Duplicate email returns 409', () => pm.response.to.have.status(409));"
+      ] } }]
+    },
+    {
+      "name": "POST - Reject missing required fields",
+      "request": {
+        "method": "POST", "url": "{{baseUrl}}/users",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\"age\":30}" }
+      },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('Missing name and email return 400', () => pm.response.to.have.status(400));"
+      ] } }]
+    },
+    {
+      "name": "POST - Reject malformed JSON",
+      "request": {
+        "method": "POST", "url": "{{baseUrl}}/users",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\"name\":" }
+      },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('Malformed JSON returns a JSON error with 400', () => { pm.response.to.have.status(400); pm.expect(pm.response.json().message).to.eql('Invalid JSON body.'); });"
+      ] } }]
+    },
+    {
+      "name": "PUT - Edit user",
+      "request": {
+        "method": "PUT", "url": "{{baseUrl}}/users/{{userId}}",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\"name\":\"Ada Updated\",\"age\":31}" }
+      },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('Returns 200 and the updated document', () => { pm.response.to.have.status(200); const user = pm.response.json(); pm.expect(user._id).to.eql(pm.collectionVariables.get('userId')); pm.expect(user.name).to.eql('Ada Updated'); pm.expect(user.age).to.eql(31); pm.expect(user.email).to.eql(pm.collectionVariables.get('testEmail')); });"
+      ] } }]
+    },
+    {
+      "name": "PUT - Validate updated fields",
+      "request": {
+        "method": "PUT", "url": "{{baseUrl}}/users/{{userId}}",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\"age\":-1}" }
+      },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('Negative age returns 400', () => pm.response.to.have.status(400));"
+      ] } }]
+    },
+    {
+      "name": "PUT - Reject MongoDB operators",
+      "request": {
+        "method": "PUT", "url": "{{baseUrl}}/users/{{userId}}",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\"$unset\":{\"email\":1}}" }
+      },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('MongoDB update operator returns 400', () => pm.response.to.have.status(400));"
+      ] } }]
+    },
+    {
+      "name": "GET - Confirm update persisted",
+      "request": { "method": "GET", "url": "{{baseUrl}}/users" },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('Updated fields persisted and invalid update was rejected', () => { pm.response.to.have.status(200); const user = pm.response.json().find(u => u._id === pm.collectionVariables.get('userId')); pm.expect(user.name).to.eql('Ada Updated'); pm.expect(user.age).to.eql(31); pm.expect(user.email).to.eql(pm.collectionVariables.get('testEmail')); });"
+      ] } }]
+    },
+    {
+      "name": "DELETE - Reject invalid ID",
+      "request": { "method": "DELETE", "url": "{{baseUrl}}/users/not-an-id" },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('Malformed ID returns 400', () => pm.response.to.have.status(400));"
+      ] } }]
+    },
+    {
+      "name": "DELETE - Remove user",
+      "request": { "method": "DELETE", "url": "{{baseUrl}}/users/{{userId}}" },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('Returns 200 and the deleted document', () => { pm.response.to.have.status(200); pm.expect(pm.response.json()._id).to.eql(pm.collectionVariables.get('userId')); });"
+      ] } }]
+    },
+    {
+      "name": "GET - Confirm deletion in MongoDB",
+      "request": { "method": "GET", "url": "{{baseUrl}}/users" },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('Deleted user no longer appears', () => { pm.response.to.have.status(200); pm.expect(pm.response.json().some(u => u._id === pm.collectionVariables.get('userId'))).to.eql(false); });"
+      ] } }]
+    },
+    {
+      "name": "PUT - Missing user",
+      "request": {
+        "method": "PUT", "url": "{{baseUrl}}/users/{{userId}}",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\"name\":\"Missing\"}" }
+      },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('Updating deleted user returns 404', () => pm.response.to.have.status(404));"
+      ] } }]
+    },
+    {
+      "name": "DELETE - Missing user",
+      "request": { "method": "DELETE", "url": "{{baseUrl}}/users/{{userId}}" },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('Deleting user twice returns 404', () => pm.response.to.have.status(404));"
+      ] } }]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "daylist-mern-todo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A simple MERN todo app ready for Azure App Service and MongoDB Atlas.",
+  "type": "module",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "workspaces": [
+    "client"
+  ],
+  "scripts": {
+    "dev": "concurrently --kill-others-on-fail \"node --watch server/index.js\" \"npm run dev --workspace client\"",
+    "start": "node server/index.js",
+    "build": "npm run build --workspace client",
+    "test": "npm run test:api && npm run test:client",
+    "test:api": "node --test tests/api.test.js",
+    "test:client": "npm run test --workspace client"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "mongoose": "^8.19.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0",
+    "mongodb-memory-server": "^10.2.0",
+    "supertest": "^7.1.0"
+  }
+}

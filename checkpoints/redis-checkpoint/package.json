@@ -1,0 +1,24 @@
+{
+  "name": "gtfs-redis-mongodb-checkpoint",
+  "version": "1.0.0",
+  "private": true,
+  "description": "GTFS trip planning and an application-level Redis/MongoDB benchmark",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "generate": "node src/generate.js",
+    "ingest": "node src/ingest.js",
+    "start": "node src/server.js",
+    "benchmark": "node src/benchmark.js",
+    "test": "node --test",
+    "db:up": "docker compose up -d --wait",
+    "db:down": "docker compose down"
+  },
+  "dependencies": {
+    "csv-parse": "^7.0.3",
+    "mongodb": "^6.20.0",
+    "redis": "^4.7.0"
+  }
+}

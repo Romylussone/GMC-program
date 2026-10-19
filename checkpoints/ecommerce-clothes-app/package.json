@@ -1,0 +1,45 @@
+{
+  "name": "maison-clothing",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "dev": "concurrently -k -n api,web \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:client": "vite --host 0.0.0.0",
+    "dev:server": "node --watch server/index.js",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "start": "node server/index.js",
+    "test": "node --import tsx --test tests/api.test.js tests/commerce.test.js tests/ui.test.js",
+    "test:mongo": "node --test tests/mongo.integration.js",
+    "seed": "node server/seed.js"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "lucide-react": "^0.468.0",
+    "mongoose": "^8.19.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.9.4",
+    "serverless-http": "^3.2.0",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.8",
+    "@vitejs/plugin-react": "^5.0.4",
+    "concurrently": "^9.2.1",
+    "jsdom": "^26.1.0",
+    "supertest": "^7.1.4",
+    "tsx": "^4.23.15",
+    "vite": "^7.1.12"
+  }
+}

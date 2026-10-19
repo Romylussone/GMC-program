@@ -1,0 +1,13 @@
+{
+  "name": "consistent-hash-key-value-store",
+  "version": "1.0.0",
+  "private": true,
+  "description": "An in-memory distributed key-value storage simulation with consistent hashing, replication, and an LRU cache.",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node server.js",
+    "demo": "node demo.js",
+    "test": "node --test"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "educms",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Educational content management system",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "concurrently -k \"node --watch server.js\" \"npm run dev --workspace client\"",
+    "build": "npm run build --workspace client",
+    "migrate": "node src/database/migrate.js",
+    "seed": "node src/database/seed.js",
+    "test": "node --test --test-concurrency=1",
+    "check": "node scripts/check.js"
+  },
+  "workspaces": [
+    "client"
+  ],
+  "engines": {
+    "node": ">=22.12"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "compression": "^1.8.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
+    "express-validator": "^7.2.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.0.2",
+    "pg": "^8.16.3",
+    "redis": "^5.8.2",
+    "sanitize-html": "^2.18.1",
+    "slugify": "^1.6.6",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "supertest": "^7.1.4"
+  }
+}

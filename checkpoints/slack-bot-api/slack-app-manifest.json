@@ -1,0 +1,35 @@
+{
+  "display_information": {
+    "name": "GMC Hello Bot",
+    "description": "Channel greetings, /hello, and message logging",
+    "background_color": "#24374b"
+  },
+  "features": {
+    "bot_user": {
+      "display_name": "GMC Hello Bot",
+      "always_online": false
+    },
+    "slash_commands": [
+      {
+        "command": "/hello",
+        "url": "https://example.com/slack/events",
+        "description": "Get a friendly greeting from the bot",
+        "should_escape": false
+      }
+    ]
+  },
+  "oauth_config": {
+    "scopes": {
+      "bot": ["chat:write", "channels:history", "commands"]
+    }
+  },
+  "settings": {
+    "event_subscriptions": {
+      "request_url": "https://example.com/slack/events",
+      "bot_events": ["message.channels"]
+    },
+    "socket_mode_enabled": false,
+    "org_deploy_enabled": false,
+    "token_rotation_enabled": false
+  }
+}

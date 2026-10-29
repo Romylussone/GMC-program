@@ -1,0 +1,20 @@
+{
+  "name": "slack-bot-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Slack Bolt exercise: channel greetings, /hello, and Events API logging",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "dev": "node --watch bot.js",
+    "test": "node --test",
+    "check": "node --check bot.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@slack/bolt": "^5.1.0",
+    "dotenv": "^17.4.2"
+  }
+}

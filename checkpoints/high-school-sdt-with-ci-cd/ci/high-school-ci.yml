@@ -1,0 +1,51 @@
+name: High school Git CI and QA
+
+on:
+  push:
+    paths:
+      - 'checkpoints/high-school-sdt-with-ci-cd/**'
+      - '.github/workflows/high-school-ci.yml'
+  pull_request:
+    paths:
+      - 'checkpoints/high-school-sdt-with-ci-cd/**'
+      - '.github/workflows/high-school-ci.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    name: Gradebook QA (Node ${{ matrix.node }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [22, 24]
+    defaults:
+      run:
+        working-directory: checkpoints/high-school-sdt-with-ci-cd
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+          cache-dependency-path: checkpoints/high-school-sdt-with-ci-cd/package-lock.json
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Lint, format, test, build, and smoke test
+        run: npm run check
+      - name: Write the workflow result
+        if: always()
+        env:
+          QA_STATUS: ${{ job.status }}
+        run: |
+          echo "### Gradebook QA — Node ${{ matrix.node }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "Result: $QA_STATUS" >> "$GITHUB_STEP_SUMMARY"
+          echo "Open the job steps above to investigate any failure." >> "$GITHUB_STEP_SUMMARY"

@@ -1,0 +1,26 @@
+{
+  "name": "high-school-git-ci-qa",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A student gradebook for practicing Git, continuous integration, and quality assurance.",
+  "type": "module",
+  "engines": {
+    "node": "^20.19.0 || ^22.13.0 || >=24"
+  },
+  "scripts": {
+    "start": "node src/cli.js",
+    "demo": "node src/cli.js examples/students.json",
+    "test": "node --test --experimental-test-coverage",
+    "lint": "eslint . --max-warnings 0",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "build": "node scripts/build.js",
+    "test:build": "node scripts/smoke-build.js",
+    "check": "npm run lint && npm run format:check && npm test && npm run build && npm run test:build"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.13.0",
+    "prettier": "^3.9.10"
+  }
+}

@@ -1,0 +1,9 @@
+# Reflection draft
+
+_Personalize this draft with your own experiences after completing the Git and peer-review exercises. It does not claim that those activities have already happened._
+
+This project showed me how Git, continuous integration, and quality assurance support a shared development process. One challenge was understanding the difference between working files, staged changes, local commits, and changes published to a remote repository. Another was recognizing that a feature branch provides a place to work independently, while a pull request creates an opportunity to discuss that work before merging it. The conflict exercise provides practice in comparing competing edits and choosing a clear resolution instead of simply keeping one version.
+
+The CI configuration gives every contribution the same sequence of checks. It installs dependencies from a lockfile, runs the linter and formatter, executes automated tests, builds the application, and checks the built program. This reduces the chance of forgetting a verification step. A failed job also identifies which stage needs attention, helping the author focus on a specific problem. Testing two Node.js versions adds confidence that the code behaves consistently across environments.
+
+The gradebook tests demonstrate why checking edge cases matters. A score just below sixty must remain a failing score, and invalid input should produce a useful error. Version control preserves the reasoning behind changes through commits, while reviews let teammates question assumptions and suggest improvements. Together, these practices make changes easier to understand and verify. Before submitting, I need to complete a real peer review, record its feedback, and replace the general observations in this draft with details from that collaboration.

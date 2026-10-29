@@ -1,0 +1,16 @@
+{
+  "name": "nosql-database-views",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "E-commerce NoSQL schema design and analytics refactor",
+  "engines": { "node": ">=20.19.0" },
+  "scripts": {
+    "demo": "node scripts/demo.mjs",
+    "test": "node --test --test-concurrency=1 tests/database.test.mjs",
+    "shard": "node scripts/shard.mjs"
+  },
+  "dependencies": { "mongodb": "^6.20.0" },
+  "devDependencies": { "mongodb-memory-server": "^10.3.0" },
+  "config": { "mongodbMemoryServer": { "downloadDir": "./.cache/mongodb-binaries" } }
+}

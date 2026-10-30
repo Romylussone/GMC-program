@@ -1,5 +1,7 @@
 # Master's Project Presentation: Artparts.ci
 
+> **Projet réalisé :** Next.js + Express + TypeScript + **MongoDB/Mongoose**. Guide d’installation et comptes de démonstration : [docs/INSTALLATION.md](docs/INSTALLATION.md). Documentation de l’API : [docs/API.md](docs/API.md).
+
 **Project Title:** Artparts.ci – An Intelligent Real Estate Platform for Property Sales and Rentals with Virtual Tours and Lead Management.
 
 ### Project Overview
@@ -27,7 +29,7 @@ The platform will be developed using modern web technologies:
 
 - **Frontend:** Next.js with TypeScript.
 - **Backend:** Node.js with Express.js and TypeScript.
-- **Database:** PostgreSQL.
+- **Database:** MongoDB with Mongoose (adapted implementation).
 - **Virtual Tours:** 360° panoramic visualization technologies.
 - **Mapping:** Interactive maps and geolocation services.
 
